@@ -16,13 +16,19 @@ def get_networks():
 
 def get_details(ssid):
     # Get network details from SSID
+    # Return dict of details
     output = str(subprocess.check_output(
         f'netsh wlan show profile "{ssid}" key=clear'))
     # Parse output from CMD
-    details = output.split("\\r\\n")
-    print(ssid)
-    print(*details, sep='\n')
+    lines = output.split("\\r\\n")
+    details = {}
+    for i, line in enumerate(lines):
+        if ":" in line and i != 1:
+            key = line[:line.find(":"):].strip()
+            value = line[line.find(":") + 1::].strip()
+            details[key] = value
+    [print(f"{key}: {value}") for key, value in details.items()]
 
 
 if __name__ == "__main__":
-    get_networks()
+    get_details("Fourcandles")
