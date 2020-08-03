@@ -1,6 +1,7 @@
 # grab-stick
-A set of python utilities to automatically exfiltrate system data on USB insert
-Designed for Windows 10, but may extend to linux in the future
+A set of python utilities to automatically exfiltrate system data on USB insert.
+
+Designed for Windows 10, but may extend to linux in the future.
 
 ## Features
 - [ ] Script autoruns on USB plugin
