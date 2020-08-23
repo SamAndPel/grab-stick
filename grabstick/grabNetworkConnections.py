@@ -2,7 +2,7 @@ import subprocess
 
 
 def get_networks():
-    # Return array of saves network SSIDs on the local machine
+    # Return array of saved network SSIDs on the local machine
     # List network names in CMD
     output = str(subprocess.check_output("netsh wlan show profile"))
     # Parse output from CMD
@@ -27,8 +27,17 @@ def get_details(ssid):
             key = line[:line.find(":"):].strip()
             value = line[line.find(":") + 1::].strip()
             details[key] = value
-    [print(f"{key}: {value}") for key, value in details.items()]
+    return details
+
+
+def main():
+    networks = get_networks()
+    details = {}
+    for ssid in networks:
+        details[ssid] = get_details(ssid)
+    return details
 
 
 if __name__ == "__main__":
-    get_details("Fourcandles")
+    # get_details("Fourcandles")
+    print(main())
