@@ -2,9 +2,9 @@
 # as little time as possible. Designed to be run using a USB/rubberducky in an
 # ethical hacking environment, but use as you like.
 
-import xml.etree.ElementTree as et
 import os
 import datetime
+import json
 
 from grabstick import grabNetworkConnections
 
@@ -23,17 +23,21 @@ def writeout(data):
         print("Error - path already exists, exiting")
     else:
         os.mkdir(dir)
+        os.chdir(dir)
         # Do output
+        with open("Scanresults.json", "w") as file:
+            json.dump(data, file)
 
 
 def main():
     # Run main() of each getter library (in ./grabstick)
     networks = grabNetworkConnections.main()
+
     # Concatenate results
+    master = {}
+    master["networks"] = networks
 
-    master = networks
-
-    # Render as XML, HTML, TXT for future usage
+    # Render as JSON for future usage
     writeout(master)
 
 

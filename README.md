@@ -5,7 +5,7 @@ Designed for Windows 10, but may extend to Linux in the future.
 
 ## Design
 ./grabstick contains a series of python libraries, each which extracts one element of system data, returning a DICT.
-Main.py runs each of these in parallel using threading for optimal speed, and renders the output to XML and TXT in a
+Main.py runs each of these in parallel using threading for optimal speed, and renders the output to JSON in a
 folder named for the time and date of the scan.
 
 The system can be extended by creating more scripts in ./grabstick, and importing them into main.py
