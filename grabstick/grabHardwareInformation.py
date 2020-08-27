@@ -22,7 +22,7 @@ def getSystemInfo():
                                                   '%012x' % uuid.getnode()))
         info['processor'] = platform.processor()
         info['ram'] = str(
-            round(psutil.virtual_memory().total / (1024.0 ** 3))) + " GB"
+            round(psutil.virtual_memory().total / (1024.0 ** 3))) + "gb"
         return info
     except Exception as e:
         logging.exception(e)
