@@ -3,10 +3,8 @@ import socket
 import re
 import uuid
 import json
-# import psutil
+import psutil
 import logging
-
-# Psutil is not a standard library module so trying to avoid using it for now
 
 # https://stackoverflow.com/a/58420504
 
@@ -23,7 +21,8 @@ def getSystemInfo():
         info['mac-address'] = ':'.join(re.findall('..',
                                                   '%012x' % uuid.getnode()))
         info['processor'] = platform.processor()
-        # info['ram'] = str(round(psutil.virtual_memory().total / (1024.0 ** 3)))+" GB"
+        info['ram'] = str(
+            round(psutil.virtual_memory().total / (1024.0 ** 3))) + " GB"
         return info
     except Exception as e:
         logging.exception(e)

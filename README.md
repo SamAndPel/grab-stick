@@ -3,6 +3,10 @@ A set of python utilities to automatically exfiltrate system data.
 
 Designed for Windows 10, but may extend to Linux in the future.
 
+## Installation/usage
+1. Run pip install to install all required modules from requirements.txt
+2. Run main.py
+
 ## Design
 ./grabstick contains a series of python libraries, each which extracts one element of system data, returning a DICT.
 Main.py runs each of these in parallel using threading for optimal speed, and renders the output to JSON in a
