@@ -6,7 +6,7 @@ import os
 import datetime
 import json
 
-from grabstick import grabNetworkConnections, grabHardwareInformation, grabRunningProcesses
+from grabstick import grabNetworkConnections, grabHardwareInformation, grabRunningProcesses, grabUsernames
 
 
 def writeout(data):
@@ -34,12 +34,14 @@ def main():
     networks = grabNetworkConnections.main()
     hardware = grabHardwareInformation.main()
     processes = grabRunningProcesses.main()
+    users = grabUsernames.main()
 
     # Concatenate results
     master = {}
     master["networks"] = networks
     master["hardware"] = hardware
     master["processes"] = processes
+    master["usernames"] - users
 
     # Render as JSON for future usage
     writeout(master)
