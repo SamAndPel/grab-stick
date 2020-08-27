@@ -18,9 +18,9 @@ Originally designed to autorun on USB insert (hence the name 'grabstick'), this 
 time and unexpected complexity. I may implement it in the future.
 
 ## Features
-- [ ] Grab local OS/critical software versions
-- [ ] Grab local user account names
-- [ ] Grab local network connection history, names and passwords
+- [*] Grab local OS version
+- [*] Grab local user account and group names
+- [*] Grab local network connection history, names and passwords
 - [ ] Grab any accessible SSH keys
 - [ ] Uses threading to optimise speed
 
