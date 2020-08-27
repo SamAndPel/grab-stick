@@ -1,7 +1,7 @@
 import subprocess
 
 def get_members_of_group(group):
-    #returns list
+    #returns list of members of specified group
     result = str(subprocess.check_output(f'net localgroup "{group}"'))
     section = result[result.find("Members\\r\\n") + 7:result.find("The command completed successfully."):].split("\\r\\n")
     members = section[3:-1:]

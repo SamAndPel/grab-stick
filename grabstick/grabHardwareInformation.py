@@ -6,7 +6,7 @@ import json
 import psutil
 import logging
 
-# https://stackoverflow.com/a/58420504
+# Adapted from https://stackoverflow.com/a/58420504
 
 
 def getSystemInfo():

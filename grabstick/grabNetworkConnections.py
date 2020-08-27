@@ -36,8 +36,3 @@ def main():
     for ssid in networks:
         details[ssid] = get_details(ssid)
     return details
-
-
-if __name__ == "__main__":
-    # get_details("Fourcandles")
-    print(main())
