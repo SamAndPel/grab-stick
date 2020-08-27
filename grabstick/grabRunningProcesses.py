@@ -12,7 +12,8 @@ def get_running_processes():
             # Get process info
             procinfo["name"] = proc.name()
             procinfo["pid"] = proc.pid
-            procinfo["cpu"] = proc.cpu_percent()
+            # procinfo["cpu"] = proc.cpu_percent(interval=None)
+            # Commentedout as this requires an interval to time over, setting interval >1ms creates enormous slowdown
             procinfo["ram"] = str(round((proc.memory_full_info().uss / (1024.0 ** 2)), 3)) + "mb"
             procinfo["user"] = proc.username()
             procinfo["status"] = proc.status()
